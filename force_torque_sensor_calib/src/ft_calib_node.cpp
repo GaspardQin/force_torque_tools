@@ -424,8 +424,8 @@ public:
 
 		if(!m_received_imu)
 		{
-			ROS_ERROR("Haven't received accelerometer readings");
-			return;
+			ROS_ERROR("Haven't received accelerometer readings, but ignore");
+			// return;
 		}
 
 		geometry_msgs::TransformStamped transform_sensor_to_base;

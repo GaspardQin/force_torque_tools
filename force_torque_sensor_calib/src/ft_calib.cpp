@@ -171,7 +171,7 @@ Eigen::VectorXd FTCalib::getCalib()
 	//									 t_bias_x, t_bias_y, t_bias_z]
 	Eigen::VectorXd ft_calib_params;
 	ft_calib_params.resize(13);
-	ft_calib_params(0) = force_calib_params.head<3>(0).norm() / m_local_gravitational_acceleration; //mass
+	ft_calib_params(0) = force_calib_params.head<3>().norm() / m_local_gravitational_acceleration; //mass
 	ft_calib_params(1) = force_calib_params(0) / ft_calib_params(0); //g_x_in_base
 	ft_calib_params(2) = force_calib_params(1) / ft_calib_params(0); //g_y_in_base
 	ft_calib_params(3) = force_calib_params(2) / ft_calib_params(0); //g_z_in_base
